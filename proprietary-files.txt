@@ -3,14 +3,12 @@ bin/hvdcp
 bin/irsc_util
 bin/mpdecision
 bin/netmgrd
-bin/qmiproxy
 bin/qmuxd
 bin/qseecomd
 bin/rmt_storage
 bin/sct_service
 bin/tad_static
 bin/ta_qmi_service
-bin/wcnss_addr
 bin/wcnss_service
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 etc/acdbdata/MTP/MTP_General_cal.acdb

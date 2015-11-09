@@ -24,7 +24,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
-TARGET_KERNEL_SOURCE := kernel/sony/msm8974
+#TARGET_KERNEL_SOURCE := kernel/sony/msm8974
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -37,7 +37,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8226-common/boot/custombootimg.mk
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=yukon
+BOARD_KERNEL_CMDLINE := androidboot.hardware=yukon androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 androidboot.selinux=permissive
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -122,6 +122,7 @@ BOARD_NFC_CHIPSET := pn547
 # FM Radio
 QCOM_FM_ENABLED := true
 AUDIO_FEATURE_ENABLED_FM := true
+
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

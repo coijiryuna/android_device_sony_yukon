@@ -183,7 +183,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     thermanager \
     wcnss_addr \
-    bt_addr
+    bt_addr \
+    wcnss_service
 
 #Charger
 PRODUCT_PACKAGES += \
