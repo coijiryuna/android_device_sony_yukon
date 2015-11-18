@@ -1,7 +1,12 @@
-Copyright (C) Sony Mobile Communications 2014
-=============================================
+Sony yukon platform for modified wukong(D2533, Xperia C3)
+now working list
+bt
+nfc
+cell network
 
-This is the Android device configuration for yukon platform.
-
-Build instructions
-http://developer.sonymobile.com/knowledge-base/open-source/open-devices/aosp-build-instructions/
+not working
+sensors
+audio
+wifi
+mediasever
+camera
