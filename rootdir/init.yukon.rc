@@ -64,7 +64,18 @@ on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0775 media_rw media_rw
     chown media_rw media_rw /data/media
-    
+
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp system /data/misc/dhcp
+
+    # Update WIFI MAC address
+    mkdir /data/misc/wifi/prima 0775 wifi wifi
+    exec /system/bin/mac-update    
+
     # to observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
@@ -335,7 +346,11 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     class main
     user root
     group root
-
+service wcnss_init /system/bin/sh /system/etc/init.yukon.wifi.sh
+    class main
+    user system
+    group system wifi
+    oneshot
 #WCNSS service
 service wcnss-service /system/bin/wcnss_service
     class late_start
@@ -425,6 +440,8 @@ service hciattach /system/bin/sh /system/etc/init.yukon.bt.sh
     group bluetooth system
     disabled
     oneshot
+
+
 
 service charger /sbin/healthd -c
     class charger

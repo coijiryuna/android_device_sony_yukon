@@ -79,6 +79,8 @@
 /dev/video32              0660   system     camera
 /dev/video33              0660   system     camera
 /sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio  radio
+/dev/mdm                  0660   system     radio
+
 
 # BT
 /dev/hidraw*                                0666 system    system
@@ -96,6 +98,11 @@
 /dev/nfc-nci              0660   nfc        nfc
 /dev/pn544                0660   nfc        nfc
 /dev/pn547                0660   nfc        nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  init_deinit 0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  set_pwr     0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  res_ready   0400    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  recv_rsp    0600    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  send_cmd    0200    nfc     nfc
 
 # LED
 /sys/devices/00-qcom,leds-a100/leds/led:* max_brightness 0664 system system
@@ -129,7 +136,11 @@
 /sys/devices/f9924000.i2c/i2c-1/1-000f offset                   0660 system input
 /dev/mmc3416x                                                   0660 system input
 /dev/ecompass_ctrl                                              0660 system input
-
+/sys/devices/f9925000.i2c/i2c-2/2-0028  init_deinit 0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  set_pwr     0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  res_ready   0400    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  recv_rsp    0600    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  send_cmd    0200    nfc     nfc
 # UIO devices
 /dev/uio0                 0660 system system
 /dev/uio1                 0660 system system

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+//for wukong
 #define LOG_TAG "lights.yukon"
 
 #include <cutils/log.h>
@@ -67,7 +67,7 @@ static struct led_desc {
 	},
 	[LED_BKLT_MDSS] = {
 		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/lcd-backlight/max_brightness",
+		.max_brightness_s = "/sys/class/leds/lm3630-lcd-bl/max_brightness",
 		.brightness = "/sys/class/leds/lcd-backlight/brightness",
 	},
 	[LED_RED] = {
