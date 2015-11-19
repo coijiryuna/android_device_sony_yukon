@@ -185,7 +185,8 @@ PRODUCT_PACKAGES += \
     thermanager \
     wcnss_addr \
     bt_addr \
-    wcnss_service
+    wcnss_service \
+    libwcnss_qmi 
 
 #Charger
 PRODUCT_PACKAGES += \
