@@ -74,6 +74,8 @@ on post-fs-data
 
     # Update WIFI MAC address
     mkdir /data/misc/wifi/prima 0775 wifi wifi
+    exec /system/bin/insmod /system/lib/modules/wlan.ko
+    exec /system/bin/insmod /system/lib/modules/pronto/pronto_wlan.ko
     exec /system/bin/mac-update    
 
     # to observe dnsmasq.leases file for dhcp information of soft ap.
@@ -346,17 +348,19 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     class main
     user root
     group root
-service wcnss_init /system/bin/sh /system/etc/init.yukon.wifi.sh
+
+service wcnss_init /system/bin/sh /system/etc/init.qcom.wifi.sh
     class main
     user system
     group system wifi
     oneshot
+
 #WCNSS service
 service wcnss-service /system/bin/wcnss_service
-    class late_start
-    user system
-    group system wifi
-    oneshot
+   class main
+   user system
+   group system wifi radio
+   oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -440,8 +444,6 @@ service hciattach /system/bin/sh /system/etc/init.yukon.bt.sh
     group bluetooth system
     disabled
     oneshot
-
-
 
 service charger /sbin/healthd -c
     class charger

@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     hostapd \
     libwpa_client \
+    macaddrsetup \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -219,6 +220,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
 # QC Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 

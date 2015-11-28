@@ -61,35 +61,36 @@ static struct led_desc {
 	const char *step;
 } led_descs[] = {
 	[LED_BACKLIGHT] = {
-		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/wled:backlight/max_brightness",
-		.brightness = "/sys/class/leds/wled:backlight/brightness",
-	},
-	[LED_BKLT_MDSS] = {
-		.max_brightness = 0,
+		.max_brightness = 255,
 		.max_brightness_s = "/sys/class/leds/lm3630-lcd-bl/max_brightness",
 		.brightness = "/sys/class/leds/lcd-backlight/brightness",
 	},
+	[LED_BKLT_MDSS] = {
+		.max_brightness = 255,
+		.max_brightness_s = "/sys/class/leds/lcd-backlight/max_brightness", 
+		.brightness = "/sys/class/leds/lcd-backlight/brightness", 
+
+	},
 	[LED_RED] = {
-		.max_brightness = 0,
+		.max_brightness = 255,
 		.max_brightness_s = "/sys/class/leds/led:rgb_red/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_red/brightness",
-		.pwm = "/sys/class/leds/led:rgb_red/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_red/step_duration",
+		.pwm = "/sys/class/leds/led:rgb_red/pwm_us",
+		.step = "/sys/class/leds/led:rgb_red/ramp_step_ms",
 	},
 	[LED_GREEN] = {
-		.max_brightness = 0,
+		.max_brightness = 255,
 		.max_brightness_s = "/sys/class/leds/led:rgb_green/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_green/brightness",
-		.pwm = "/sys/class/leds/led:rgb_green/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_green/step_duration",
+		.pwm = "/sys/class/leds/led:rgb_green/pwm_us",
+		.step = "/sys/class/leds/led:rgb_green/ramp_step_ms",
 	},
 	[LED_BLUE] = {
-		.max_brightness = 0,
+		.max_brightness = 255,
 		.max_brightness_s = "/sys/class/leds/led:rgb_blue/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_blue/brightness",
-		.pwm = "/sys/class/leds/led:rgb_blue/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_blue/step_duration",
+		.pwm = "/sys/class/leds/led:rgb_blue/pwm_us",
+		.step = "/sys/class/leds/led:rgb_blue/ramp_step_ms",
 	},
 };
 
