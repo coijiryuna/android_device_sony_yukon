@@ -33,7 +33,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8226-common/boot/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon/boot/custombootimg.mk
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
@@ -59,7 +59,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-BOARD_EGL_CFG := device/sony/msm8226-common/rootdir/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/sony/yukon/rootdir/system/lib/egl/egl.cfg
 
 BOARD_USES_ALSA_AUDIO := true
 
@@ -82,7 +82,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/msm8226-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yukon/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
@@ -93,7 +93,7 @@ TARGET_NO_RPC := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-TARGET_SYSTEM_PROP := device/sony/msm8226-common/system.prop
+TARGET_SYSTEM_PROP := device/sony/yukon/system.prop
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -107,7 +107,7 @@ include device/sony/common/BoardConfigCommon.mk
 BOARD_USES_QCOM_HARDWARE := true
 
 # CM Hardware
-BOARD_HARDWARE_CLASS += device/sony/msm8226-common/cmhw
+BOARD_HARDWARE_CLASS += device/sony/yukon/cmhw
 
 # Power definitions for Qualcomm solution
 TARGET_POWERHAL_VARIANT := qcom
@@ -127,7 +127,7 @@ AUDIO_FEATURE_ENABLED_FM := true
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/sony/msm8226-common/sepolicy
+    device/sony/yukon/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     device.te \
