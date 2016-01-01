@@ -4,7 +4,7 @@ uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
-INITSH := device/sony/msm8226-common/boot/init.sh
+INITSH := device/sony/yukon/boot/init.sh
 BOOTREC_DEVICE := device/sony/$(TARGET_DEVICE)/bootrec-device
 
 ## Build and run dtbtool
